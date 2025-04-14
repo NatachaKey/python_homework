@@ -54,13 +54,15 @@ clean_data.drop_duplicates(inplace=True)
 
 # errors="coerce" will turn invalid dates into NaN or NaT (Not a Time) 
 clean_data['Age']=pd.to_numeric(clean_data['Age'], errors='coerce')
-clean_data["Salary"] = pd.to_numeric(clean_data["Salary"].replace(["unknown"], pd.NA), errors="coerce")
+clean_data["Salary"] = pd.to_numeric(clean_data["Salary"].replace(["unknown", "n/a"], pd.NA), errors="coerce")
 print(clean_data)
 
 mean_age=clean_data['Age'].mean()
 clean_data['Age']=clean_data['Age'].fillna(mean_age)
-mean_salary=clean_data['Salary'].mean()
-clean_data['Salary']=clean_data['Age'].fillna(mean_salary)
+
+median_salary=clean_data['Salary'].median()
+clean_data['Salary']=clean_data['Salary'].fillna(median_salary)
+
 clean_data['Hire Date']= pd.to_datetime(clean_data['Hire Date'], errors='coerce')
 
 clean_data['Department']=clean_data['Department'].str.strip()
