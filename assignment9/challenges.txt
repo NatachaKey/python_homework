@@ -1,0 +1,8 @@
+Challenges faced:
+- The OWASP site is JavaScript-heavy, so the content wasn't immediately available. I used `time.sleep()` to wait for the page to load.
+- Finding the correct XPath required inspecting multiple elements and trying different expressions until the vulnerability titles and links were captured properly.
+- Some items included anchors or text that weren’t part of the Top 10, so I added checks to ensure both title and href existed.
+
+Resolution:
+- Used Chrome Developer Tools (F12) to inspect the exact structure of the list.
+- Applied filtering logic and verified output before saving it to CSV.
