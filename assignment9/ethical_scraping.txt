@@ -1,0 +1,3 @@
+Websites use a **robots.txt** file to specify which parts of the site web crawlers are allowed to access. 
+This helps reduce strain on servers and keeps private or sensitive content off-limits. 
+It also encourages ethical data scraping by clearly defining what is acceptable for bots to collect.
